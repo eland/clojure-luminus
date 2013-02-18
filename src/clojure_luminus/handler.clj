@@ -2,7 +2,8 @@
   (:use clojure-luminus.routes.home
         compojure.core)
   (:require [noir.util.middleware :as middleware]
-            [compojure.route :as route]))
+            [compojure.route :as route]
+            [clojure-luminus.models.db :as db]))
 
 (defroutes app-routes
   (route/resources "/")
@@ -14,6 +15,8 @@
    an app server such as Tomcat
    put any initialization code here"
   []
+	(if-not (.exists (new java.io.File "site.h2.db"))
+    (db/create-activity-table))
   (println "clojure-luminus started successfully..."))
 
 (defn destroy []

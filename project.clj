@@ -18,5 +18,7 @@
                        :stacktraces?  false 
                        :auto-reload?  false}}
    :dev {:dependencies [[ring-mock "0.1.3"]
-                        [ring/ring-devel "1.1.8"]]}}
+                        [ring/ring-devel "1.1.8"]
+                        [org.clojure/java.jdbc "0.2.3"]
+                        [com.h2database/h2 "1.3.160"]]}}
   :min-lein-version "2.0.0")
