@@ -17,7 +17,7 @@
      [:activity_name "varchar(30)"]
      [:activity_time "datetime"])))
 
-(defn read-activity []
+(defn read-activities []
   (sql/with-connection
    db
    (sql/with-query-results res
